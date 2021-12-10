@@ -13,7 +13,7 @@ function updateInventory(arr1, arr2) {
     }
   }
   return arr1.sort(function (a, b) {
-    a[1] < b[2] ? -1 : 1;
+    a[1] < b[1] ? -1 : 1;
   });
 }
 
