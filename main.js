@@ -1,20 +1,20 @@
 function updateInventory(arr1, arr2) {
   for (let i = 0; i < arr2.length; i++) {
     let inventoryExist = arr1.every(function (element) {
-      return arr2[i][1] != element[1];
-    });
+      return arr2[i][1] != element[1]
+    })
     if (inventoryExist) {
-      arr1.push(arr2[i]);
+      arr1.push(arr2[i])
     } else {
       let indexVal = arr1.findIndex(function (element) {
-        return element[1] === arr2[i][1];
-      });
-      arr1[indexVal][0] += arr2[i][0];
+        return arr2[i][1] === element[1]
+      })
+      arr1[indexVal][0] += arr2[i][0]
     }
   }
   return arr1.sort(function (a, b) {
-    a[1] < b[1] ? -1 : 1;
-  });
+    return a[1] > b[1] ? 1 : -1
+  })
 }
 
 let curInv = [
